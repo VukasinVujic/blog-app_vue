@@ -5,14 +5,14 @@
     <div class="form-group row">
       <label for="title" class="col-4 col-form-label"> title</label> 
       <div class="col-8">
-        <input id="title" name="title" type="text" class="form-control here" required="required" v-model="post.title">
+        <input id="title" name="title" type="text" class="form-control here" required="required" minlength='2' v-model="post.title">
       </div>
     </div>
 
     <div class="form-group row">
       <label for="text" class="col-4 col-form-label"> text</label> 
       <div class="col-8">
-        <input id="text" name="text" type="text" class="form-control here" required="required" v-model="post.text">
+        <input id="text" name="text" type="text" class="form-control here" required="required" maxlength='300' v-model="post.text">
       </div>
     </div>
 
