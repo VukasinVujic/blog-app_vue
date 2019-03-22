@@ -4,6 +4,8 @@
       <div class="card-body">
         <h5 class="card-title">{{ post.title }}</h5>
         <p class="card-text">Text: {{ post.text }}</p>
+
+        <router-link :to="{name: 'single' , params: {id:post.id}}">View Post</router-link>
       </div>
       <!-- <ul class="list-group list-group-flush">
         <li class="list-group-item">Year: {{ car.year }}</li>
@@ -19,7 +21,7 @@
     </div>
   </div>
 </template>
-        
+
 <script>
 export default {
   props: {

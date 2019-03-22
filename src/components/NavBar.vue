@@ -20,6 +20,14 @@
             <span class="sr-only">(current)</span>
           </router-link>
         </li>
+
+        <li class="nav-item">
+          <router-link :to="{ name: 'home' }" class="nav-link">Home</router-link>
+        </li>
+
+        <!-- <li class="nav-item">
+          <router-link :to="{ name: 'single' }" class="nav-link">Single post</router-link>
+        </li>-->
       </ul>
       <span class="navbar-text">Sample app</span>
     </div>

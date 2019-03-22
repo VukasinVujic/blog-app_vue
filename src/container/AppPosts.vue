@@ -14,6 +14,19 @@ export default {
     return {
       posts: []
     };
+  },
+
+  beforeRouteEnter(to, from, next) {
+    posts
+      .getAll()
+      .then(response => {
+        next(vm => {
+          vm.posts = response.data;
+        });
+      })
+      .catch(error => {
+        console.log(error);
+      });
   }
 };
 </script>
