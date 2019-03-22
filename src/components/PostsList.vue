@@ -2,10 +2,12 @@
   <div class="row">
     <div class="card col-md-2" v-for="post in posts" :key="post.id">
       <div class="card-body">
-        <h5 class="card-title">{{ post.title }}</h5>
+        <h5 class="card-title">Title: {{ post.title }}</h5>
         <p class="card-text">Text: {{ post.text }}</p>
 
         <router-link :to="{name: 'single' , params: {id:post.id}}">View Post</router-link>
+        <br>
+        <router-link :to="{name: 'edit' , params: {id:post.id}}">Edit post</router-link>
       </div>
       <!-- <ul class="list-group list-group-flush">
         <li class="list-group-item">Year: {{ car.year }}</li>

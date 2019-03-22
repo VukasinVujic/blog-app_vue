@@ -21,7 +21,22 @@ export default {
     };
   },
 
+  created() {
+    this.$router.params.id &&
+      posts.get(this.$$router.params.id).then(response => {
+        this.post = response.data;
+      });
+  },
+
   methods: {
+    onSubmit() {
+      if (this.post.id) {
+        this.editPost();
+      } else {
+        this.addPost();
+      }
+    },
+
     addPost() {
       posts
         .add(this.post)
@@ -32,6 +47,15 @@ export default {
           console.log(error);
         });
     },
+
+    editPost() {
+        posts.edit(this.post)
+        .then(success) => {
+            this.redirectToPosts()
+        })
+        }
+    },
+
     redirectToPosts() {
       this.$router.push({ name: "posts" });
     }
